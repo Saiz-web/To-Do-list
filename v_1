@@ -1,0 +1,47 @@
+HELP = """
+help - напечатать справку по программе.
+add - добавить задачу в список.
+exit - выход из программы.
+show - показать список задач. """
+print("Вы можете вызвать справку программы по команде 'help' ")
+
+
+tasks_list = []
+today_list =[]
+tomorrow_list = []
+other_list = []
+
+run = True
+
+while run == True:
+    command = input(" Введите команду: ")
+
+    if command == "help":
+        print(HELP)
+    elif command == "show":
+        print(tasks_list)
+        print(today_list)
+        print(tomorrow_list)
+        print(other_list)
+
+    elif command == "add":
+        date = input("Введите дату задачи : ")
+        if date == "Сегодня":
+            task = input("Введите задачу на сегодня:")
+            today_list.append(task)
+            print("Задача добавлена!")
+        elif date == "Завтра":
+            task = input("Введите задачу на завтра:")
+            tomorrow_list_list.append(task)
+            print("Задача добавлена!")
+        else:
+            task = input("Введите задачу :")
+            other_list.append(task)
+            print("Задача добавлена!")
+    elif command == "exit":
+        print("Спасибо за использование! До свидания!")
+        run = False
+    else:
+        print("Неизвестная команда")
+        run = False
+
