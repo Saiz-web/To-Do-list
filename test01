@@ -1,0 +1,26 @@
+using System;
+
+namespace GeometryLibrary
+{
+    public class ShapeCalculator
+    {
+        public static double CalculateCircleArea(double radius)
+        {
+            return Math.PI * radius * radius;
+        }
+
+        public static double CalculateTriangleArea(double sideA, double sideB, double sideC)
+        {
+            double s = (sideA + sideB + sideC) / 2;
+            return Math.Sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+        }
+
+        public static bool IsRightAngledTriangle(double sideA, double sideB, double sideC)
+        {
+            double[] sides = { sideA, sideB, sideC };
+            Array.Sort(sides);
+
+            return Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) == Math.Pow(sides[2], 2);
+        }
+    }
+}
